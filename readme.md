@@ -1,5 +1,5 @@
 # travelTime
-A small Golang program that uses [Project OSRM](project-osrm.org) to calculate **driving* times between many sources and many destinations.
+A small Golang program that uses [Project OSRM](project-osrm.org) to calculate *driving* times between many sources and many destinations.
 
 ## **DISCLAIMER**
 I wrote almost none of this.  This was largely copy/paste from a Large Language Model (LLM) output.  If you think this code violates a license you own/have the rights to, please don't hesitate to reach out.
