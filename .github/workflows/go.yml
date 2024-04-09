@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  build_linux:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -36,9 +36,6 @@ jobs:
 
     - name: Build darwin/amd64
       run: env GOOS=darwin GOARCH=amd64 go build -o travelTime-darwin-amd64
-
-    - name: Build darwin/arm
-      run: env GOOS=darwin GOARCH=arm go build -o travelTime-darwin-arm
 
     - name: Build darwin/arm64
       run: env GOOS=darwin GOARCH=arm64 go build -o travelTime-darwin-arm64
