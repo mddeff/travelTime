@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  build:
+  build_linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -19,13 +19,32 @@ jobs:
       with:
         go-version: '1.21.5'
 
-    - name: Build
-      run: go build -v ./...
+    - name: Build linux/amd64
+      run: env GOOS=linux GOARCH=amd64 go build -o travelTime-linux-amd64
 
-#    - name: Test
-#      run: go test -v ./...
+    - name: Build linux/arm
+      run: env GOOS=linux GOARCH=arm go build -o travelTime-linux-arm
+
+    - name: Build linux/arm64
+      run: env GOOS=linux GOARCH=arm64 go build -o travelTime-linux-arm64
+
+    - name: Build freebsd/amd64
+      run: env GOOS=freebsd GOARCH=amd64 go build -o travelTime-freebsd-amd64
+
+    - name: Build windows/amd64
+      run: env GOOS=windows GOARCH=amd64 go build -o travelTime-windows-amd64.exe
+
+    - name: Build darwin/amd64
+      run: env GOOS=darwin GOARCH=amd64 go build -o travelTime-darwin-amd64
+
+    - name: Build darwin/arm
+      run: env GOOS=darwin GOARCH=arm go build -o travelTime-darwin-arm
+
+    - name: Build darwin/arm64
+      run: env GOOS=darwin GOARCH=arm64 go build -o travelTime-darwin-arm64
 
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
-        files: travelTime
+        files: travelTime-**
+
