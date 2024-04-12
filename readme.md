@@ -2,7 +2,13 @@
 A small Golang program that uses [Project OSRM](project-osrm.org) to calculate *driving* times between many sources and many destinations.
 
 ## **DISCLAIMER**
+TL;DR - Caveat Emptor.
+
+This works for me but I make no gurantees it works for you, or that any of it is even a good idea. Assume none of what I'm doing is best practice. I make no warranty express or implied of fitness for a particular purpose.
+
 I wrote almost none of this.  This was largely copy/paste from a Large Language Model (LLM) output.  If you think this code violates a license you own/have the rights to, please don't hesitate to reach out.
+
+Furthermore, this uses OSRM's open API. Don't be an idiot, don't abuse it.  Consider supporting their project.
 
 ## Why would I want this
 This was born out of a need when shopping for property and I wanted to know how travel times from many sources (potential places to rent/purchase) were to many destinations (work, friends, family).  I couldn't find anything that would do it quite as easily, so here we are.
